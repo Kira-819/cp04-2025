@@ -175,6 +175,9 @@
         img.onload = function() {
             ctx.drawImage(img, 0, 0, 300, 300);
         };
+        var audio = new Audio();
+        audio.src="pin.wav";
+        audio.play();
     }
     
     // ButtonAがクリックされた時の処理
@@ -195,9 +198,6 @@
         period=60*parseInt($("#minute").val())+parseInt($("#second").val());
         $("#time").html("経過時間:0");
         $("#remain").html("残り時間:"+period);
-        var audio = new Audio();
-        audio.src="pin.wav";
-        audio.play();
     }
     
  
@@ -209,10 +209,11 @@
             $("#time").html("経過時間:"+etime);
             $("#remain").html("残り時間:"+rest);
             analog(rest);
-            if(rest==0){
+            if(rest<=0){
                 active=false;
-                alarm;
+                alarm();
             }
+        }
     } 
 
   </script>
