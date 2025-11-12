@@ -38,6 +38,27 @@
         $('#btnC').click(function(e) {
             btnCClick(e);
         });
+        $('#btn10s').click(function(e) {
+            alarm();
+            active=false;
+            period=10;
+            $("#time").html("経過時間:0");
+            $("#remain").html("残り時間:"+period);
+        });
+        $('#btn3m').click(function(e) {
+            alarm();
+            active=false;
+            period=180;
+            $("#time").html("経過時間:0");
+            $("#remain").html("残り時間:"+period);
+        });
+        $('#btn5m').click(function(e) {
+            alarm();
+            active=false;
+            period=300;
+            $("#time").html("経過時間:0");
+            $("#remain").html("残り時間:"+period);
+        });
         init();
     });
     
@@ -238,6 +259,9 @@
     <button id="btnA">Start</button>  
     <button id="btnB">Stop</button>  
     <button id="btnC">Set</button>  
+    <button id="btn10s">10秒</button>
+    <button id="btn3m">3分</button>
+    <button id="btn5m">5分</button>
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=15 >
 </body>
