@@ -213,6 +213,15 @@
                 active=false;
                 alarm();
             }
+            if(rest<=10){
+                $("body").css("background-color","pink");
+            }
+            if(rest>10&&rest<60){
+                $("body").css("background-color","skyblue");
+            }
+            if(rest>=60){
+                $("body").css("background-color","lightgreen");
+            }
         }
     } 
 
